@@ -8,40 +8,40 @@ import (
 // EmojiMapping defines the mapping from shortcut to standard Mattermost emoji
 type EmojiMapping struct {
 	Shortcut string // The shortcut pattern to match (e.g., "=))", ":))")
-	Emoji    string // The Mattermost emoji to replace with (e.g., "smile")
+	Emoji    string // The Mattermost emoji to replace with (e.g., ":yh_smile:")
 }
 
 // EmojiShortcuts contains all the emoji shortcut mappings
 // Add or modify mappings here as needed
 var EmojiShortcuts = []EmojiMapping{
-	// Smileys
-	{"Shortcut": ":))", "Emoji": ":yh_laughing:"},
-	{"Shortcut": "=))", "Emoji": ":yh_rolling:"},
-	{"Shortcut": ";))", "Emoji": ":yh_giggle:"},
-	{"Shortcut": ";)", "Emoji": ":yh_winking:"},
-	{"Shortcut": ";;)", "Emoji": ":yh_eyelashes:"},
-	{"Shortcut": ":|", "Emoji": ":yh_straight_face:"},
-	{"Shortcut": "\/:)", "Emoji": ":yh_raised_eyebrow:"},
-	{"Shortcut": ":)", "Emoji": ":yh_smile:"},
-	{"Shortcut": ":-?", "Emoji": ":yh_thinking:"},
-	{"Shortcut": ":p", "Emoji": ":yh_sticking_tongue_out:"},
-	{"Shortcut": ":D", "Emoji": ":yh_grin:"},
-	{"Shortcut": ":((", "Emoji": ":yh_crying:"},
-	{"Shortcut": ":(", "Emoji": ":yh_sad:"},
-	{"Shortcut": ":-$", "Emoji": ":yh_shh:"},
-	{"Shortcut": ":\">", "Emoji": ":yh_blushing:"},
-	{"Shortcut": ":-s", "Emoji": ":yh_worried:"},
-	{"Shortcut": ":o", "Emoji": ":yh_surprised:"},
-	{"Shortcut": "\\m\/", "Emoji": ":yh_rocking:"},
-	{"Shortcut": "=P~", "Emoji": ":yh_drooling:"},
-	{"Shortcut": ":-j", "Emoji": ":yh_oh_go_on:"},
-	{"Shortcut": "=D>", "Emoji": ":yh_applause:"},
-	{"Shortcut": ":->", "Emoji": ":yh_smug:"},
-	{"Shortcut": ":-w", "Emoji": ":yh_waiting:"},
-	{"Shortcut": ":-x", "Emoji": ":yh_love_struck:"},
-	{"Shortcut": ":-??", "Emoji": ":yh_dont_know:"},
-	{"Shortcut": ":-\"", "Emoji": ":yh_whistling:"},
-	{"Shortcut": "):", "Emoji": ":yh_sad:"},
+	{Shortcut: ":))", Emoji: ":yh_laughing:"},
+	{Shortcut: "=))", Emoji: ":yh_rolling:"},
+	{Shortcut: ";))", Emoji: ":yh_giggle:"},
+	{Shortcut: ";)", Emoji: ":yh_winking:"},
+	{Shortcut: ";;)", Emoji: ":yh_eyelashes:"},
+	{Shortcut: ":|", Emoji: ":yh_straight_face:"},
+	{Shortcut: "/:)", Emoji: ":yh_raised_eyebrow:"},
+	{Shortcut: ":)", Emoji: ":yh_smile:"},
+	{Shortcut: ":-?", Emoji: ":yh_thinking:"},
+	{Shortcut: ":p", Emoji: ":yh_sticking_tongue_out:"},
+	{Shortcut: ":P", Emoji: ":yh_sticking_tongue_out:"},
+	{Shortcut: ":D", Emoji: ":yh_grin:"},
+	{Shortcut: ":((", Emoji: ":yh_crying:"},
+	{Shortcut: ":(", Emoji: ":yh_sad:"},
+	{Shortcut: ":-$", Emoji: ":yh_shh:"},
+	{Shortcut: ":\">", Emoji: ":yh_blushing:"},
+	{Shortcut: ":-s", Emoji: ":yh_worried:"},
+	{Shortcut: ":-S", Emoji: ":yh_worried:"},
+	{Shortcut: ":o", Emoji: ":yh_surprised:"},
+	{Shortcut: ":O", Emoji: ":yh_surprised:"},
+	{Shortcut: "=P~", Emoji: ":yh_drooling:"},
+	{Shortcut: ":-j", Emoji: ":yh_oh_go_on:"},
+	{Shortcut: "=D>", Emoji: ":yh_applause:"},
+	{Shortcut: ":->", Emoji: ":yh_smug:"},
+	{Shortcut: ":-w", Emoji: ":yh_waiting:"},
+	{Shortcut: ":-x", Emoji: ":yh_love_struck:"},
+	{Shortcut: ":-??", Emoji: ":yh_dont_know:"},
+	{Shortcut: "):", Emoji: ":yh_sad:"},
 }
 
 // compiledPatterns holds the precompiled regex patterns for better performance
@@ -97,16 +97,9 @@ func ReplaceEmojiShortcuts(message string) string {
 	result := message
 
 	// Process each mapping
-	for i, mapping := range EmojiShortcuts {
-		if i >= len(compiledPatterns) {
-			break
-		}
-
-		pattern := compiledPatterns[i]
-		replacement := ":" + pattern.emoji + ":"
-
+	for _, mapping := range EmojiShortcuts {
 		// Replace all occurrences while preserving surrounding whitespace
-		result = replacePreservingContext(result, mapping.Shortcut, replacement)
+		result = replacePreservingContext(result, mapping.Shortcut, mapping.Emoji)
 	}
 
 	return result
@@ -119,9 +112,9 @@ func replacePreservingContext(text, shortcut, replacement string) string {
 	// Pattern to match shortcut with word boundaries or at string edges
 	// This ensures we don't replace shortcuts inside URLs, code, or other words
 	patterns := []string{
-		`(^|\s)` + escaped + `($|\s)`,           // Surrounded by whitespace or at edges
-		`(^|\s)` + escaped + `([.,!?\)\]\}])`,   // Followed by punctuation
-		`([\(\[\{])` + escaped + `($|\s)`,       // Preceded by opening bracket
+		`(^|\s)` + escaped + `($|\s)`,             // Surrounded by whitespace or at edges
+		`(^|\s)` + escaped + `([.,!?\)\]\}])`,     // Followed by punctuation
+		`([\(\[\{])` + escaped + `($|\s)`,         // Preceded by opening bracket
 		`([\(\[\{])` + escaped + `([.,!?\)\]\}])`, // Between brackets/punctuation
 	}
 

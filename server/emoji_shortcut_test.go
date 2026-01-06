@@ -13,27 +13,22 @@ func TestReplaceEmojiShortcuts(t *testing.T) {
 		{
 			name:     "Simple smiley",
 			input:    "Hello :)",
-			expected: "Hello :slightly_smiling_face:",
+			expected: "Hello :yh_smile:",
 		},
 		{
 			name:     "Laughing face",
-			input:    "That's funny =))",
-			expected: "That's funny :laughing:",
+			input:    "That's funny :))",
+			expected: "That's funny :yh_laughing:",
 		},
 		{
 			name:     "Multiple shortcuts",
-			input:    "Hi :) How are you? =))",
-			expected: "Hi :slightly_smiling_face: How are you? :laughing:",
-		},
-		{
-			name:     "Heart emoji",
-			input:    "I love this <3",
-			expected: "I love this :heart:",
+			input:    "Hi :) How are you? :))",
+			expected: "Hi :yh_smile: How are you? :yh_laughing:",
 		},
 		{
 			name:     "Shortcut at start",
 			input:    ":) Good morning!",
-			expected: ":slightly_smiling_face: Good morning!",
+			expected: ":yh_smile: Good morning!",
 		},
 		{
 			name:     "No shortcuts",
@@ -48,17 +43,17 @@ func TestReplaceEmojiShortcuts(t *testing.T) {
 		{
 			name:     "Wink emoji",
 			input:    "Just kidding ;)",
-			expected: "Just kidding :wink:",
+			expected: "Just kidding :yh_winking:",
 		},
 		{
 			name:     "Sad face",
 			input:    "That's sad :(",
-			expected: "That's sad :slightly_frowning_face:",
+			expected: "That's sad :yh_sad:",
 		},
 		{
-			name:     "XD laughing",
-			input:    "So funny XD",
-			expected: "So funny :joy:",
+			name:     "Grin",
+			input:    "So happy :D",
+			expected: "So happy :yh_grin:",
 		},
 	}
 
@@ -81,7 +76,7 @@ func TestProcessMessageForEmoji(t *testing.T) {
 		{
 			name:     "Normal message with shortcut",
 			input:    "Hello :)",
-			expected: "Hello :slightly_smiling_face:",
+			expected: "Hello :yh_smile:",
 		},
 		{
 			name:     "Code block should be preserved",
@@ -96,7 +91,7 @@ func TestProcessMessageForEmoji(t *testing.T) {
 		{
 			name:     "Mixed content",
 			input:    "Hello :) check `code :)` and :D",
-			expected: "Hello :slightly_smiling_face: check `code :)` and :grinning:",
+			expected: "Hello :yh_smile: check `code :)` and :yh_grin:",
 		},
 	}
 
