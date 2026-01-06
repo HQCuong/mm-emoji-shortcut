@@ -3,15 +3,12 @@ package main
 import (
 	"net/http"
 	"sync"
-	"time"
 
 	"github.com/mattermost/mattermost-plugin-starter-template/server/command"
 	"github.com/mattermost/mattermost-plugin-starter-template/server/store/kvstore"
 	"github.com/mattermost/mattermost/server/public/model"
 	"github.com/mattermost/mattermost/server/public/plugin"
 	"github.com/mattermost/mattermost/server/public/pluginapi"
-	"github.com/mattermost/mattermost/server/public/pluginapi/cluster"
-	"github.com/pkg/errors"
 )
 
 // Plugin implements the interface expected by the Mattermost server to communicate between the server and plugin processes.
@@ -26,8 +23,6 @@ type Plugin struct {
 
 	// commandClient is the client used to register and execute slash commands.
 	commandClient command.Command
-
-	backgroundJob *cluster.Job
 
 	// configurationLock synchronizes access to the configuration.
 	configurationLock sync.RWMutex
@@ -45,29 +40,50 @@ func (p *Plugin) OnActivate() error {
 
 	p.commandClient = command.NewCommandHandler(p.client)
 
-	job, err := cluster.Schedule(
-		p.API,
-		"BackgroundJob",
-		cluster.MakeWaitForRoundedInterval(1*time.Hour),
-		p.runJob,
-	)
-	if err != nil {
-		return errors.Wrap(err, "failed to schedule background job")
-	}
-
-	p.backgroundJob = job
-
 	return nil
 }
 
 // OnDeactivate is invoked when the plugin is deactivated.
 func (p *Plugin) OnDeactivate() error {
-	if p.backgroundJob != nil {
-		if err := p.backgroundJob.Close(); err != nil {
-			p.API.LogError("Failed to close background job", "err", err)
-		}
-	}
 	return nil
+}
+
+// MessageWillBePosted is invoked when a message is posted by a user before it is committed to the database.
+// This hook replaces emoji shortcuts with their corresponding Mattermost emoji codes.
+func (p *Plugin) MessageWillBePosted(c *plugin.Context, post *model.Post) (*model.Post, string) {
+	if post == nil || post.Message == "" {
+		return post, ""
+	}
+
+	// Process the message to replace emoji shortcuts
+	originalMessage := post.Message
+	processedMessage := ProcessMessageForEmoji(originalMessage)
+
+	// Only update if the message was modified
+	if processedMessage != originalMessage {
+		post.Message = processedMessage
+	}
+
+	return post, ""
+}
+
+// MessageWillBeUpdated is invoked when a message is updated by a user before it is committed to the database.
+// This hook also replaces emoji shortcuts when editing messages.
+func (p *Plugin) MessageWillBeUpdated(c *plugin.Context, newPost *model.Post, oldPost *model.Post) (*model.Post, string) {
+	if newPost == nil || newPost.Message == "" {
+		return newPost, ""
+	}
+
+	// Process the message to replace emoji shortcuts
+	originalMessage := newPost.Message
+	processedMessage := ProcessMessageForEmoji(originalMessage)
+
+	// Only update if the message was modified
+	if processedMessage != originalMessage {
+		newPost.Message = processedMessage
+	}
+
+	return newPost, ""
 }
 
 // This will execute the commands that were registered in the NewCommandHandler function.
