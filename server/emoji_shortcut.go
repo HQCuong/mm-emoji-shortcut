@@ -42,6 +42,7 @@ var EmojiShortcuts = []EmojiMapping{
 	{Shortcut: ":-x", Emoji: ":yh_love_struck:"},
 	{Shortcut: ":-??", Emoji: ":yh_dont_know:"},
 	{Shortcut: "):", Emoji: ":yh_sad:"},
+	{Shortcut: ":-\"", Emoji: ":yh_whistling:"},
 }
 
 // compiledPatterns holds the precompiled regex patterns for better performance
