@@ -1,149 +1,167 @@
 /**
  * ==== EMOJI ====
  */
-.emojione.big,
-.emoji.big {
-  width: 24px !important;
-  height: 24px !important;
-}
 
-.emoji[style*="yahoo"] {
+/* .emoticonone.big,
+.emoticon.big {
+  min-width: 24px !important;
+  min-height: 24px !important;
+} */
+
+/* [data-emoticon*="yh"] .emoticon {
+  min-width: 16px !important;
+  min-height: 16px !important;
+} */
+
+.emoticon {
+  min-width: 16px !important;
+  min-height: 16px !important;
   width: 16px !important;
   height: 16px !important;
 }
 
-.emoji[style*="yahoo_applause"],
-.emoji[style*="yahoo_beat_up"],
-.emoji[style*="yahoo_coffee"],
-.emoji[style*="yahoo_cool"],
-.emoji[style*="yahoo_crying"],
-.emoji[style*="yahoo_dancing"],
-.emoji[style*="yahoo_drooling"],
-.emoji[style*="yahoo_hypnotized"],
-.emoji[style*="yahoo_money_eyes"],
-.emoji[style*="yahoo_nerd"],
-.emoji[style*="yahoo_oh_go_on"],
-.emoji[style*="yahoo_phbbbbt"],
-.emoji[style*="yahoo_raised_eyebrow"],
-.emoji[style*="yahoo_rolling_eyes"],
-.emoji[style*="yahoo_sigh"],
-.emoji[style*="yahoo_silly"],
-.emoji[style*="yahoo_yawn"] {
+.emoticon[aria-label=":yh_applause:"], [aria-label*="yh"][aria-label*="applause"] .emoticon,
+.emoticon[aria-label=":yh_beat_up:"], [aria-label*="yh"][aria-label*="beat up"] .emoticon,
+.emoticon[aria-label=":yh_coffee:"], [aria-label*="yh"][aria-label*="coffee"] .emoticon,
+.emoticon[aria-label=":yh_cool:"], [aria-label*="yh"][aria-label*="cool"] .emoticon,
+.emoticon[aria-label=":yh_crying:"], [aria-label*="yh"][aria-label*="crying"] .emoticon,
+.emoticon[aria-label=":yh_dancing:"], [aria-label*="yh"][aria-label*="dancing"] .emoticon,
+.emoticon[aria-label=":yh_drooling:"], [aria-label*="yh"][aria-label*="drooling"] .emoticon,
+.emoticon[aria-label=":yh_hypnotized:"], [aria-label*="yh"][aria-label*="hypnotized"] .emoticon,
+.emoticon[aria-label=":yh_money_eyes:"], [aria-label*="yh"][aria-label*="money eyes"] .emoticon,
+.emoticon[aria-label=":yh_nerd:"], [aria-label*="yh"][aria-label*="nerd"] .emoticon,
+.emoticon[aria-label=":yh_oh_go_on:"], [aria-label*="yh"][aria-label*="oh go on"] .emoticon,
+.emoticon[aria-label=":yh_phbbbbt:"], [aria-label*="yh"][aria-label*="phbbbbt"] .emoticon,
+.emoticon[aria-label=":yh_raised_eyebrow:"], [aria-label*="yh"][aria-label*="raised eyebrow"] .emoticon,
+.emoticon[aria-label=":yh_rolling_eyes:"], [aria-label*="yh"][aria-label*="rolling eyes"] .emoticon,
+.emoticon[aria-label=":yh_sigh:"], [aria-label*="yh"][aria-label*="sigh"] .emoticon,
+.emoticon[aria-label=":yh_silly:"], [aria-label*="yh"][aria-label*="silly"] .emoticon,
+.emoticon[aria-label=":yh_yawn:"], [aria-label*="yh"][aria-label*="yawn"] .emoticon {
+  min-width: 17px !important;
+  min-height: 17px !important;
   width: 17px !important;
   height: 17px !important;
 }
 
-.emoji[style*="yahoo_confused"] {
+.emoticon[aria-label=":yh_confused:"], [aria-label*="yh"][aria-label*="confused"] .emoticon {
+  min-width: 18px !important;
   width: 18px !important;
 }
 
-.emoji[style*="yahoo_sleepy"] {
+.emoticon[aria-label=":yh_sleepy:"], [aria-label*="yh"][aria-label*="sleepy"] .emoticon {
+  min-width: 19px !important;
   width: 19px !important;
 }
 
-.emoji[style*="yahoo_crying"],
-.emoji[style*="yahoo_peace"],
-.emoji[style*="yahoo_shame_on_you"],
-.emoji[style*="yahoo_whistling"] {
+.emoticon[aria-label=":yh_crying:"], [aria-label*="yh"][aria-label*="crying"] .emoticon,
+.emoticon[aria-label=":yh_peace:"], [aria-label*="yh"][aria-label*="peace"] .emoticon,
+.emoticon[aria-label=":yh_shame_on_you:"], [aria-label*="yh"][aria-label*="shame on you"] .emoticon,
+.emoticon[aria-label=":yh_whistling:"], [aria-label*="yh"][aria-label*="whistling"] .emoticon {
+  min-width: 20px !important;
   width: 20px !important;
 }
 
-.emoji[style*="yahoo_bring_it_on"],
-.emoji[style*="yahoo_daydreaming"],
-.emoji[style*="yahoo_waiting"] {
+.emoticon[aria-label=":yh_bring_it_on:"], [aria-label*="yh"][aria-label*="bring it on"] .emoticon,
+.emoticon[aria-label=":yh_daydreaming:"], [aria-label*="yh"][aria-label*="daydreaming"] .emoticon,
+.emoticon[aria-label=":yh_waiting:"], [aria-label*="yh"][aria-label*="waiting"] .emoticon {
+  min-width: 21px !important;
   width: 21px !important;
 }
 
-.emoji[style*="yahoo_bee"],
-.emoji[style*="yahoo_doh"],
-.emoji[style*="yahoo_loser"],
-.emoji[style*="yahoo_nerd"],
-.emoji[style*="yahoo_sigh"],
-.emoji[style*="yahoo_silly"] {
+.emoticon[aria-label=":yh_bee:"], [aria-label*="yh"][aria-label*="bee"] .emoticon,
+.emoticon[aria-label=":yh_doh:"], [aria-label*="yh"][aria-label*="doh"] .emoticon,
+.emoticon[aria-label=":yh_loser:"], [aria-label*="yh"][aria-label*="loser"] .emoticon,
+.emoticon[aria-label=":yh_nerd:"], [aria-label*="yh"][aria-label*="nerd"] .emoticon,
+.emoticon[aria-label=":yh_sigh:"], [aria-label*="yh"][aria-label*="sigh"] .emoticon,
+.emoticon[aria-label=":yh_silly:"], [aria-label*="yh"][aria-label*="silly"] .emoticon {
+  min-width: 22px !important;
   width: 22px !important;
 }
 
-.emoji[style*="yahoo_do_not_want_to_see"] {
+.emoticon[aria-label=":yh_do_not_want_to_see:"], [aria-label*="yh"][aria-label*="do not want to see"] .emoticon {
+  min-width: 23px !important;
   width: 23px !important;
 }
 
-.emoji[style*="yahoo_dancing"],
-.emoji[style*="yahoo_oh_go_on"] {
+.emoticon[aria-label=":yh_dancing:"], [aria-label*="yh"][aria-label*="dancing"] .emoticon,
+.emoticon[aria-label=":yh_oh_go_on:"], [aria-label*="yh"][aria-label*="oh go on"] .emoticon {
+  min-width: 24px !important;
   width: 24px !important;
 }
 
-.emoji[style*="yahoo_call_me"],
-.emoji[style*="yahoo_clown"],
-.emoji[style*="yahoo_thumbs_down"],
-.emoji[style*="yahoo_wave"] {
+.emoticon[aria-label=":yh_call_me:"], [aria-label*="yh"][aria-label*="call me"] .emoticon,
+.emoticon[aria-label=":yh_clown:"], [aria-label*="yh"][aria-label*="clown"] .emoticon,
+.emoticon[aria-label=":yh_thumbs_down:"], [aria-label*="yh"][aria-label*="thumbs down"] .emoticon,
+.emoticon[aria-label=":yh_wave:"], [aria-label*="yh"][aria-label*="wave"] .emoticon {
+  min-width: 25px !important;
   width: 25px !important;
 }
 
-.emoji[style*="yahoo_angel"],
-.emoji[style*="yahoo_idea"],
-.emoji[style*="yahoo_rolling"],
-.emoji[style*="yahoo_time_out"] {
+.emoticon[aria-label=":yh_angel:"], [aria-label*="yh"][aria-label*="angel"] .emoticon,
+.emoticon[aria-label=":yh_idea:"], [aria-label*="yh"][aria-label*="idea"] .emoticon,
+.emoticon[aria-label=":yh_rolling:"], [aria-label*="yh"][aria-label*="rolling"] .emoticon,
+.emoticon[aria-label=":yh_time_out:"], [aria-label*="yh"][aria-label*="time out"] .emoticon {
+  min-width: 27px !important;
   width: 27px !important;
 }
 
-.emoji[style*="yahoo_on_the_phone"] {
+.emoticon[aria-label=":yh_on_the_phone:"], [aria-label*="yh"][aria-label*="on the phone"] .emoticon {
+  min-width: 28px !important;
   width: 28px !important;
 }
 
-.emoji[style*="yahoo_not_worthy"],
-.emoji[style*="yahoo_rocking"] {
+.emoticon[aria-label=":yh_not_worthy:"], [aria-label*="yh"][aria-label*="not worthy"] .emoticon,
+.emoticon[aria-label=":yh_rocking:"], [aria-label*="yh"][aria-label*="rocking"] .emoticon {
+  min-width: 29px !important;
   width: 29px !important;
 }
 
-.emoji[style*="yahoo_angry"],
-.emoji[style*="yahoo_whew"] {
+.emoticon[aria-label=":yh_angry:"], [aria-label*="yh"][aria-label*="angry"] .emoticon,
+.emoticon[aria-label=":yh_whew:"], [aria-label*="yh"][aria-label*="whew"] .emoticon {
+  min-width: 31px !important;
   width: 31px !important;
 }
 
-.emoji[style*="yahoo_chatterbox"],
-.emoji[style*="yahoo_hurry_up"],
-.emoji[style*="yahoo_nail_biting"] {
+.emoticon[aria-label=":yh_chatterbox:"], [aria-label*="yh"][aria-label*="chatterbox"] .emoticon,
+.emoticon[aria-label=":yh_hurry_up:"], [aria-label*="yh"][aria-label*="hurry up"] .emoticon,
+.emoticon[aria-label=":yh_nail_biting:"], [aria-label*="yh"][aria-label*="nail biting"] .emoticon {
+  min-width: 32px !important;
   width: 32px !important;
 }
 
-.emoji[style*="yahoo_party"] {
+.emoticon[aria-label=":yh_party:"], [aria-label*="yh"][aria-label*="party"] .emoticon {
+  min-width: 34px !important;
   width: 34px !important;
 }
 
-.emoji[style*="yahoo_thumbs_up"] {
+.emoticon[aria-label=":yh_thumbs_up:"], [aria-label*="yh"][aria-label*="thumbs up"] .emoticon {
+  min-width: 35px !important;
   width: 35px !important;
 }
 
-.emoji[style*="yahoo_dont_know"],
-.emoji[style*="yahoo_it_was_not_me"] {
+.emoticon[aria-label=":yh_dont_know:"], [aria-label*="yh"][aria-label*="dont know"] .emoticon,
+.emoticon[aria-label=":yh_it_was_not_me:"], [aria-label*="yh"][aria-label*="it was not me"] .emoticon {
+  min-width: 36px !important;
   width: 36px !important;
 }
 
-.emoji[style*="yahoo_hug"] {
+.emoticon[aria-label=":yh_hug:"], [aria-label*="yh"][aria-label*="hug"] .emoticon {
+  min-width: 38px !important;
   width: 38px !important;
 }
 
-.emoji[style*="yahoo_at_wits_end"] {
+.emoticon[aria-label=":yh_at_wits_end:"], [aria-label*="yh"][aria-label*="at wits end"] .emoticon {
+  min-width: 40px !important;
   width: 40px !important;
 }
 
-.emoji[style*="yahoo_not_listening"] {
+.emoticon[aria-label=":yh_not_listening:"], [aria-label*="yh"][aria-label*="not listening"] .emoticon {
+  min-width: 47px !important;
   width: 47px !important;
 }
 
-.message .reactions>li .reaction-emoji .emoji[style*="yahoo"] {
-  height: 15px !important;
-  min-height: 15px;
+[aria-label*="yh"] .Reaction__emoji {
+  transform: scale(0.9) !important;
 }
 
-.rcx-message-reactions__emoji.emoji[style*="yahoo"],
-.reaction-emoji .emoji[style*="yahoo"] {
-  transform: scale(.9);
-}
 
-.thread-replied .emoji[style*="yahoo"] {
-  position: relative;
-  top: 3px;
-  max-width: 32px;
-  max-height: 14px;
-}
