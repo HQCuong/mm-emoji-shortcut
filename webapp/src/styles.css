@@ -1,0 +1,149 @@
+/**
+ * ==== EMOJI ====
+ */
+.emojione.big,
+.emoji.big {
+  width: 24px !important;
+  height: 24px !important;
+}
+
+.emoji[style*="yahoo"] {
+  width: 16px !important;
+  height: 16px !important;
+}
+
+.emoji[style*="yahoo_applause"],
+.emoji[style*="yahoo_beat_up"],
+.emoji[style*="yahoo_coffee"],
+.emoji[style*="yahoo_cool"],
+.emoji[style*="yahoo_crying"],
+.emoji[style*="yahoo_dancing"],
+.emoji[style*="yahoo_drooling"],
+.emoji[style*="yahoo_hypnotized"],
+.emoji[style*="yahoo_money_eyes"],
+.emoji[style*="yahoo_nerd"],
+.emoji[style*="yahoo_oh_go_on"],
+.emoji[style*="yahoo_phbbbbt"],
+.emoji[style*="yahoo_raised_eyebrow"],
+.emoji[style*="yahoo_rolling_eyes"],
+.emoji[style*="yahoo_sigh"],
+.emoji[style*="yahoo_silly"],
+.emoji[style*="yahoo_yawn"] {
+  width: 17px !important;
+  height: 17px !important;
+}
+
+.emoji[style*="yahoo_confused"] {
+  width: 18px !important;
+}
+
+.emoji[style*="yahoo_sleepy"] {
+  width: 19px !important;
+}
+
+.emoji[style*="yahoo_crying"],
+.emoji[style*="yahoo_peace"],
+.emoji[style*="yahoo_shame_on_you"],
+.emoji[style*="yahoo_whistling"] {
+  width: 20px !important;
+}
+
+.emoji[style*="yahoo_bring_it_on"],
+.emoji[style*="yahoo_daydreaming"],
+.emoji[style*="yahoo_waiting"] {
+  width: 21px !important;
+}
+
+.emoji[style*="yahoo_bee"],
+.emoji[style*="yahoo_doh"],
+.emoji[style*="yahoo_loser"],
+.emoji[style*="yahoo_nerd"],
+.emoji[style*="yahoo_sigh"],
+.emoji[style*="yahoo_silly"] {
+  width: 22px !important;
+}
+
+.emoji[style*="yahoo_do_not_want_to_see"] {
+  width: 23px !important;
+}
+
+.emoji[style*="yahoo_dancing"],
+.emoji[style*="yahoo_oh_go_on"] {
+  width: 24px !important;
+}
+
+.emoji[style*="yahoo_call_me"],
+.emoji[style*="yahoo_clown"],
+.emoji[style*="yahoo_thumbs_down"],
+.emoji[style*="yahoo_wave"] {
+  width: 25px !important;
+}
+
+.emoji[style*="yahoo_angel"],
+.emoji[style*="yahoo_idea"],
+.emoji[style*="yahoo_rolling"],
+.emoji[style*="yahoo_time_out"] {
+  width: 27px !important;
+}
+
+.emoji[style*="yahoo_on_the_phone"] {
+  width: 28px !important;
+}
+
+.emoji[style*="yahoo_not_worthy"],
+.emoji[style*="yahoo_rocking"] {
+  width: 29px !important;
+}
+
+.emoji[style*="yahoo_angry"],
+.emoji[style*="yahoo_whew"] {
+  width: 31px !important;
+}
+
+.emoji[style*="yahoo_chatterbox"],
+.emoji[style*="yahoo_hurry_up"],
+.emoji[style*="yahoo_nail_biting"] {
+  width: 32px !important;
+}
+
+.emoji[style*="yahoo_party"] {
+  width: 34px !important;
+}
+
+.emoji[style*="yahoo_thumbs_up"] {
+  width: 35px !important;
+}
+
+.emoji[style*="yahoo_dont_know"],
+.emoji[style*="yahoo_it_was_not_me"] {
+  width: 36px !important;
+}
+
+.emoji[style*="yahoo_hug"] {
+  width: 38px !important;
+}
+
+.emoji[style*="yahoo_at_wits_end"] {
+  width: 40px !important;
+}
+
+.emoji[style*="yahoo_not_listening"] {
+  width: 47px !important;
+}
+
+.message .reactions>li .reaction-emoji .emoji[style*="yahoo"] {
+  height: 15px !important;
+  min-height: 15px;
+}
+
+.rcx-message-reactions__emoji.emoji[style*="yahoo"],
+.reaction-emoji .emoji[style*="yahoo"] {
+  transform: scale(.9);
+}
+
+.thread-replied .emoji[style*="yahoo"] {
+  position: relative;
+  top: 3px;
+  max-width: 32px;
+  max-height: 14px;
+}
